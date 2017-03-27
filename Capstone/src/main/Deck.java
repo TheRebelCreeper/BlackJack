@@ -7,18 +7,14 @@ import javax.swing.ImageIcon;
 
 public class Deck 
 {
-	/**
-     * 
-     */
+	/** Contains the cards in play **/
     private ArrayList<Card> myCards;
-    
-    /**
-     * 
-     */
+ 
+    /** Contains the used cards **/
     private ArrayList<Card> myUsedCards;
     
     /**
-     * 
+     * Default constructor for the deck. Creates a deck with 104 cards 
      */
     public Deck()
     {
@@ -47,7 +43,11 @@ public class Deck
     }
     
     /**
+     * Constructor for deck
      * 
+     * @param type	The type of card
+     * @param suit	An integer value representing the suit of the card
+     * @param value	The numerical value of the card
      */
     public Deck(String[] type, int[] suit, int[] value)
     {
@@ -66,7 +66,9 @@ public class Deck
     }
     
     /**
+     * Deals a card out of the deck
      * 
+     * @return Returns the card at the top of the deck
      */
     public Card deal()
     {
@@ -83,7 +85,9 @@ public class Deck
     }
     
     /**
+     * Checks if the deck is empty
      * 
+     * @return Returns true if the deck is empty
      */
     public boolean isEmpty()
     {
@@ -91,7 +95,9 @@ public class Deck
     }
     
     /**
+     * Gets the size of the deck
      * 
+     * @return Returns the size of the deck
      */
     public int size()
     {
@@ -99,11 +105,13 @@ public class Deck
     }
     
     /**
-     *
+     * Shuffles the deck of cards
      */
     public void shuffle()
     {
         myCards = selectionShuffle(myUsedCards);
+        
+        // Resets the value of aces to 11
         for (Card c: myCards)
         {
         	if (c!= null && c.getID().equals("Ace") && c.getValue() == 1)
@@ -112,7 +120,9 @@ public class Deck
     }
     
     /**
+     * Shuffles the deck randomly
      * 
+     * @param usedCards	an ArrayList of the used cards
      */
     private ArrayList<Card> selectionShuffle(ArrayList<Card> usedCards)
     {
@@ -129,7 +139,9 @@ public class Deck
     }
     
     /**
+     * Prints out the cards in the deck
      * 
+     * @return Returns a string
      */
     public String toString()
     {
