@@ -220,7 +220,7 @@ public class Board implements ActionListener
 	/**
 	 * Deals a card to a player and calculates whether they have gone over 21
 	 * 
-	 * @param player	Which player is taking a card
+	 * @param 	player	Which player is taking a card
 	 * @return	Returns true if the player has gone over 21
 	 */
 	public boolean hit(Player player)
@@ -243,7 +243,6 @@ public class Board implements ActionListener
 				player.hand.get(4).setIcon(player.hand.get(4).getCard().getImage());
 			}
 		}
-		
 		return player.isBusted();
 	}
 }
