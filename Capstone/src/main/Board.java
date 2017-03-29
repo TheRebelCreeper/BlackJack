@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class Board implements ActionListener
 {
@@ -29,6 +30,7 @@ public class Board implements ActionListener
 	private CardLabel card10;
 	private JLabel dealerTotal;
 	
+	private JPanel panel;
 	private JButton hit;
 	private JButton stay;
 	private Player dealer;
@@ -55,64 +57,68 @@ public class Board implements ActionListener
 		frmBlackjack.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmBlackjack.getContentPane().setLayout(null);
 		
+		panel = new JPanel(null);
+		panel.setBounds(0, 0, 584, 562);
+		frmBlackjack.getContentPane().add(panel);
+		
 		card1 = new CardLabel("");
 		card1.setBounds(10, 306, 104, 160);
-		frmBlackjack.getContentPane().add(card1);
+		panel.add(card1);
 		
 		card2 = new CardLabel("");
 		card2.setBounds(124, 306, 104, 160);
-		frmBlackjack.getContentPane().add(card2);
+		panel.add(card2);
 		
 		card3 = new CardLabel("");
 		card3.setBounds(238, 306, 104, 160);
-		frmBlackjack.getContentPane().add(card3);
+		panel.add(card3);
 		
 		card4 = new CardLabel("");
 		card4.setBounds(352, 306, 104, 160);
-		frmBlackjack.getContentPane().add(card4);
+		panel.add(card4);
 		
 		card5 = new CardLabel("");
 		card5.setBounds(471, 306, 104, 160);
-		frmBlackjack.getContentPane().add(card5);
+		panel.add(card5);
 		
 		playerTotal = new JLabel("");
 		playerTotal.setLocation(10, 477);
 		playerTotal.setSize(100, 30);
-		frmBlackjack.getContentPane().add(playerTotal);
+		panel.add(playerTotal);
 		
 		card6 = new CardLabel("");
 		card6.setBounds(10, 11, 104, 160);
-		frmBlackjack.getContentPane().add(card6);
+		panel.add(card6);
 		
 		card7 = new CardLabel("");
 		card7.setBounds(124, 11, 104, 160);
-		frmBlackjack.getContentPane().add(card7);
+		panel.add(card7);
 		
 		card8 = new CardLabel("");
 		card8.setBounds(238, 11, 104, 160);
-		frmBlackjack.getContentPane().add(card8);
+		panel.add(card8);
 		
 		card9 = new CardLabel("");
 		card9.setBounds(352, 11, 104, 160);
-		frmBlackjack.getContentPane().add(card9);
+		panel.add(card9);
 		
 		card10 = new CardLabel("");
 		card10.setBounds(471, 11, 104, 160);
-		frmBlackjack.getContentPane().add(card10);
+		panel.add(card10);
 		
 		dealerTotal = new JLabel("");
 		dealerTotal.setLocation(14, 182);
 		dealerTotal.setSize(100, 30);
-		frmBlackjack.getContentPane().add(dealerTotal);
+		panel.add(dealerTotal);
 		
 		hit = new JButton("Hit");
 		hit.setBounds(10, 528, 89, 23);
-		frmBlackjack.getContentPane().add(hit);
+		panel.add(hit);
 		hit.addActionListener(this);
 		
 		stay = new JButton("Stay");
 		stay.setBounds(102, 528, 89, 23);
-		frmBlackjack.getContentPane().add(stay);
+		panel.add(stay);
 		stay.addActionListener(this);
 		
 		frmBlackjack.setVisible(true);
